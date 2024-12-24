@@ -7,7 +7,7 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        'custom-background-primary': 'var(--background-primary)',
+        'custom-background-primary': 'rgba(var(--background-primary))',
         'custom-background-secondary': 'var(--background-secondary)',
         'custom-text-primary': 'var(--text-primary)',
         'custom-accent': 'var(--accent)',
