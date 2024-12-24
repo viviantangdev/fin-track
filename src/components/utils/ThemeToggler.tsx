@@ -33,7 +33,7 @@ const ThemeToggler: React.FC = () => {
 
   return (
     <button onClick={toggleTheme} >
-      {darkMode ? <HiOutlineMoon /> : <HiOutlineSun />}
+      {darkMode ? <HiOutlineMoon size={24} /> : <HiOutlineSun size={24}  />}
     </button>
   );
 };

@@ -4,10 +4,13 @@ import Navbar from '../utils/Navbar';
 
 const Header: React.FC = () => {
   return (
-    <header className='flex justify-between items-center p-4'>
+    <header>
       <h1 className='text-xl font-bold'>FinTrack</h1>
+      <div className='flex space-x-5'>
+
       <Navbar />
       <ThemeToggler />
+      </div>
     </header>
   );
 };

@@ -24,6 +24,9 @@
     @apply bg-custom-background-primary text-custom-text-primary;
     @apply transition-colors duration-300;
   }
+  header{
+    @apply sticky top-0 z-[20] flex w-full justify-between items-center p-4;
+  }
 }
 
 @layer components {
