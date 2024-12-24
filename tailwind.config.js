@@ -8,8 +8,12 @@ module.exports = {
       },
       colors: {
         'custom-background-primary': 'var(--background-primary)',
-        'custom-text-primary': 'var(--text-primary)'
-      }
+        'custom-background-secondary': 'var(--background-secondary)',
+        'custom-text-primary': 'var(--text-primary)',
+        'custom-accent': 'var(--accent)',
+        'custom-border': 'var(--border)',
+        'custom-hover': 'var(--hover)',
+      },
     },
   },
   plugins: [],

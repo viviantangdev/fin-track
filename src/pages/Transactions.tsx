@@ -3,7 +3,7 @@ import React from 'react';
 const Main: React.FC = () => {
   return (
     <main>
-      Main
+      Transactions
     </main>
   );
 };
