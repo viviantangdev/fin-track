@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
         setIsNavOpen(false);
       }
     };
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 

@@ -5,11 +5,10 @@ import Navbar from '../utils/Navbar';
 const Header: React.FC = () => {
   return (
     <header>
-      <h1 className='text-xl font-bold'>FinTrack</h1>
+      <h1>FinTrack</h1>
       <div className='flex space-x-5'>
-
-      <Navbar />
-      <ThemeToggler />
+        <Navbar />
+        <ThemeToggler />
       </div>
     </header>
   );

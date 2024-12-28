@@ -6,17 +6,19 @@
   --background-primary: 255, 255, 255;
   --background-secondary: #f7f9fb;
   --text-primary: #2c3e50;
-  --accent: #1abc9c;
-  --border: #d5d8dc;
-  --hover: #16a085;
+  --accent: 26, 188, 156;
+  --border: 213, 216, 220;
+  --income: 39, 174, 96;
+  --expense: 192, 57, 43;
 }
 .dark {
-  --background-primary: 10,10,10;
+  --background-primary: 10, 10, 10;
   --background-secondary: #1e1e1e;
   --text-primary: #ecf0f1;
-  --accent: #1abc9c;
-  --border: #2c3e50;
-  --hover: #16a085;
+  --accent: 26, 188, 156;
+  --border: 44, 62, 80;
+  --income: 39, 174, 96;
+  --expense: 192, 57, 43;
 }
 
 body {
@@ -24,13 +26,23 @@ body {
   @apply transition-colors duration-300;
 }
 header {
-  @apply sticky top-0 z-[20] flex w-full justify-between items-center p-4 bg-gradient-to-b from-custom-background-primary to-custom-background-primary/0;
+  @apply sticky top-0 z-[20] flex w-full justify-between items-center bg-custom-background-primary;
+  @apply p-6;
+  @apply border-b-2 border-custom-border;
 }
 footer {
   @apply bg-custom-background-secondary p-8 text-center text-sm;
 }
 main {
   @apply min-h-[100vh];
+  @apply px-6;
+}
+
+h1 {
+  @apply text-xl font-bold;
+}
+h2 {
+  @apply text-lg font-bold;
 }
 
 @layer components {
@@ -56,5 +68,11 @@ main {
 
   .nav-link.active::after {
     width: 100%; /* Expand underline when the link is active */
+  }
+
+  .button {
+    @apply flex items-center justify-center gap-2 border-2 border-custom-border p-2 rounded-md;
+    @apply hover:bg-custom-accent hover:border-custom-accent hover:rounded-xl;
+    @apply transition-all duration-300 ease-in-out;
   }
 }
