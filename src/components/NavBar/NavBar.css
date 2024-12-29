@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+nav {
+  @apply md:relative items-center justify-center flex;
+}
+
+nav > ul {
+  @apply absolute top-full right-0 w-full bg-custom-background-secondary text-right;
+  @apply py-5 pr-5 space-y-7 gap-x-2;
+  @apply md:bg-transparent md:static md:flex md:space-y-0 md:space-x-5 md:py-0 md:pr-0 md:justify-end md:text-left md:opacity-100 md:translate-y-0;
+  @apply transform transition-all duration-300 ease-in-out;
+}
+
+ul li {
+  @apply ml-auto md:ml-0;
+}
+
+.menuButton{
+  @apply md:hidden flex justify-end
+}
+
 .nav-link {
   @apply text-custom-text-primary no-underline relative pb-1;
   @apply hover:text-custom-accent;

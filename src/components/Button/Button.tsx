@@ -2,9 +2,11 @@ import React from 'react';
 import './Button.css';
 
 interface ButtonProps {
-  label: string;
+  label?: string;
   icon?: React.ReactNode;
-  iconPosition?: 'left' | 'right';
+  iconPosition?: 'left' | 'right' | 'center';
+  ariaLabel: string;
+  buttonClassName?: string;
   onClick: () => void;
 }
 
@@ -13,14 +15,21 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   icon,
   iconPosition = 'left',
+  ariaLabel,
+  buttonClassName,
 }) => {
   return (
-    <button className='button' onClick={onClick}>
+    <button
+      className={`${buttonClassName} button`}
+      onClick={onClick}
+      aria-label={ariaLabel}
+    >
       {icon && iconPosition === 'left' && <span className='icon'>{icon}</span>}
-      <span>{label}</span>
-      {icon && iconPosition === 'right' && (
+      {label && <span>{label}</span>}
+      {icon && iconPosition === 'center' && (
         <span className='icon'>{icon}</span>
-      )}{' '}
+      )}
+      {icon && iconPosition === 'right' && <span className='icon'>{icon}</span>}{' '}
     </button>
   );
 };

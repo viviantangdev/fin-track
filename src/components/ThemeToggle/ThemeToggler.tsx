@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './ThemeToggle.css';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi2';
+import Button from '../Button/Button';
 
 const ThemeToggler: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -33,9 +33,12 @@ const ThemeToggler: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <button className='themeTogglerBtn' onClick={toggleTheme} >
-      {darkMode ? <HiOutlineMoon size={24} /> : <HiOutlineSun size={24}  />}
-    </button>
+    <Button
+      onClick={toggleTheme}
+      ariaLabel='Toggle theme'
+      icon={darkMode ? <HiOutlineMoon size={24} /> : <HiOutlineSun size={24} />}
+      iconPosition='center'
+    />
   );
 };
 

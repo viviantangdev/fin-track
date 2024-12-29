@@ -35,6 +35,7 @@ const History: React.FC = () => {
           icon={showDropDown ? <FaAngleUp /> : <FaAngleDown />}
           iconPosition='right'
           onClick={toggleDropDown}
+          ariaLabel='Apply year filter'
         />
         {showDropDown && (
           <DropDownContent items={years} onItemClick={handleSelectYear} />

@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <h1>FinTrack</h1>
-      <div className='flex space-x-5'>
+      <div className='flex gap-2 md:gap-6'>
         <Navbar />
         <ThemeToggler/>
       </div>
