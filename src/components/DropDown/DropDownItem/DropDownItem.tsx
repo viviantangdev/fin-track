@@ -1,12 +1,12 @@
 import React from 'react';
 import './DropDownItem.css';
 
-interface Props {
+interface DropDownItemProps {
     item: string;
     onClick: () => void;
 }
 
-const DropDownItem: React.FC<Props> = ({item, onClick}) => {
+const DropDownItem: React.FC<DropDownItemProps> = ({item, onClick}) => {
   return (
     <div className='dropDownItem' onClick={onClick}>{item}</div>
 )

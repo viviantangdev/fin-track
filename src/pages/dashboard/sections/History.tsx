@@ -17,7 +17,15 @@ const History: React.FC = () => {
     setShowDropDown(!showDropDown);
   };
 
-  useClickOutside(dropDownRef as React.RefObject<HTMLElement>, () => setShowDropDown(false));
+  const handleSelectYear = (year: string) => {
+    setSelectYear(year);
+    setShowDropDown(false); // Close dropdown after selection
+  };
+
+  useClickOutside(dropDownRef as React.RefObject<HTMLElement>, () =>
+    setShowDropDown(false)
+  );
+
   return (
     <section className='space-y-5 py-10'>
       <h2>History</h2>
@@ -28,7 +36,9 @@ const History: React.FC = () => {
           iconPosition='right'
           onClick={toggleDropDown}
         />
-        {showDropDown && <DropDownContent items={years} />}
+        {showDropDown && (
+          <DropDownContent items={years} onItemClick={handleSelectYear} />
+        )}
       </div>
       <div className='bg-custom-background-secondary shadow-md rounded-md p-2'>
         <Bar />
