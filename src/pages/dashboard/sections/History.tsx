@@ -4,6 +4,7 @@ import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 import Button from '../../../components/Button/Button';
 import DropDownContent from '../../../components/DropDown/DropDownContent/DropDownContent';
 import useClickOutside from '../../../hooks/useClickOutside';
+import SectionWrapper from '../../../components/SectionWrapper/SectionWrapper';
 
 const years: string[] = ['2024', '2025'];
 
@@ -27,9 +28,8 @@ const History: React.FC = () => {
   );
 
   return (
-    <section className='space-y-5 py-10'>
-      <h2>History</h2>
-      <div className='space-y-1 max-w-min' ref={dropDownRef}>
+    <SectionWrapper title='History'>
+    <div className='space-y-1 max-w-min' ref={dropDownRef}>
         <Button
           label={selectYear}
           icon={showDropDown ? <FaAngleUp /> : <FaAngleDown />}
@@ -43,7 +43,7 @@ const History: React.FC = () => {
       <div className='bg-custom-background-secondary shadow-md rounded-md p-2'>
         <Bar />
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
