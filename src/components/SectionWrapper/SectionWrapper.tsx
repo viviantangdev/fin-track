@@ -1,19 +1,17 @@
 import React from 'react';
 
 interface SectionWrapperProps {
-  title: string;
-  sectionClassName?: string;
+  title?: string;
   children: React.ReactNode;
 }
 
 const SectionWrapper: React.FC<SectionWrapperProps> = ({
   title,
-  sectionClassName,
-  children,
+  children
 }) => {
   return (
-    <section className={`${sectionClassName} space-y-5 py-10`}>
-      <h2>{title}</h2>
+    <section className='space-y-5 py-10'>
+      <h3>{title}</h3>
       {children}
     </section>
   );
