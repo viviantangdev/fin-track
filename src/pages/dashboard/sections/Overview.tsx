@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowTrendUp, FaArrowTrendDown } from 'react-icons/fa6';
 import { FaBalanceScale } from 'react-icons/fa';
-import Card from '../../../components/utils/Card';
+import Card from '../../../components/Card/Card';
 
 const Overview: React.FC = () => {
     return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css';
 
 interface CardProps {
   label: string;
@@ -9,13 +10,13 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ label, icon, value , bgColor}) => {
   return (
-    <div className='inline-flex items-center justify-start gap-3 bg-custom-background-secondary py-4 px-6 rounded-md shadow-md'>
-      <div className={`${bgColor} p-3 rounded-md`}>
+    <div className='card'>
+      <div className={`${bgColor} cardIcon`}>
         {icon}
       </div>
-      <div className='flex flex-col'>
+      <div className='cardContent'>
         <span>{label}</span>
-        <span className='text-lg font-bold'>{`${value} $`}</span>
+        <span>{`${value} $`}</span>
       </div>
     </div>
   );

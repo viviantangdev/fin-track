@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ThemeToggle.css';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi2';
 
 const ThemeToggler: React.FC = () => {
@@ -32,7 +33,7 @@ const ThemeToggler: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <button onClick={toggleTheme} >
+    <button className='themeTogglerBtn' onClick={toggleTheme} >
       {darkMode ? <HiOutlineMoon size={24} /> : <HiOutlineSun size={24}  />}
     </button>
   );

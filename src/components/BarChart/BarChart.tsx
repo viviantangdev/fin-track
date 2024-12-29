@@ -7,7 +7,7 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 } from 'chart.js';
 
 ChartJS.register(
@@ -21,17 +21,17 @@ ChartJS.register(
 
 const legendMargin = {
   id: 'legendMargin',
-  afterInit(chart:any, args:any, plugins:any) {
+  afterInit(chart: any, args: any, plugins: any) {
     const originalFit = chart.legend.fit;
     const margin = 16;
-    chart.legend.fit = function fit(){
-      if(originalFit){
+    chart.legend.fit = function fit() {
+      if (originalFit) {
         originalFit.call(this);
       }
-      return this.height += margin;
-    }
-  }
-}
+      return (this.height += margin);
+    };
+  },
+};
 
 const getCSSVariable = (variable: string, alpha: number = 1): string => {
   const rgb = getComputedStyle(document.documentElement)
@@ -42,8 +42,8 @@ const getCSSVariable = (variable: string, alpha: number = 1): string => {
 
 const BarChart: React.FC = () => {
   const [colors, setColors] = useState({
-    income: getCSSVariable('--income'),
-    expense: getCSSVariable('--expense'),
+    income: getCSSVariable('--income', 0.5),
+    expense: getCSSVariable('--expense', 0.5),
     border: getCSSVariable('--border'),
   });
 
@@ -51,8 +51,8 @@ const BarChart: React.FC = () => {
   useEffect(() => {
     const updateColors = () => {
       setColors({
-        income: getCSSVariable('--income'),
-        expense: getCSSVariable('--expense'),
+        income: getCSSVariable('--income', 0.5),
+        expense: getCSSVariable('--expense', 0.5),
         border: getCSSVariable('--border'),
       });
     };
@@ -73,6 +73,17 @@ const BarChart: React.FC = () => {
       options={{
         responsive: true,
         aspectRatio: 1 | 2,
+        animations: {
+          radius: {
+            duration: 400,
+            easing: 'linear',
+            loop: (context) => context.active,
+          },
+        },
+        interaction: {
+          mode: 'index', // Enables hover for all datasets on the same x-axis index
+          intersect: false, // Ensures tooltip shows for both bars on hover
+        },
         scales: {
           y: {
             beginAtZero: true,
@@ -92,7 +103,7 @@ const BarChart: React.FC = () => {
             },
           },
         },
-        plugins: {  
+        plugins: {
           // title: { display: true, text: 'Hello' },
           legend: {
             display: true,
@@ -100,28 +111,30 @@ const BarChart: React.FC = () => {
             position: 'top',
             labels: { usePointStyle: true, pointStyle: 'rectRounded' },
           },
-          tooltip: { mode: 'nearest' },
-        
+          tooltip: { mode: 'index', intersect: false },
         },
       }}
       data={{
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
         datasets: [
           {
+            label: 'Income',
+            data: [100, 30],
+            backgroundColor: [colors.income],
+            hoverBackgroundColor: [getCSSVariable('--income', 1)],
+            borderColor: [colors.income],
+            borderWidth: 1,
+            borderRadius: 6,
+          
+          },
+          {
             label: 'Expenses',
             data: [100, 200],
             backgroundColor: [colors.expense],
+            hoverBackgroundColor: [getCSSVariable('--expense', 1)],
             borderColor: [colors.expense],
             borderWidth: 1,
-            borderRadius: 8,
-          },
-          {
-            label: 'Income',
-            data: [100, 200],
-            backgroundColor: [colors.income],
-            borderColor: [colors.income],
-            borderWidth: 1,
-            borderRadius: 8,
+            borderRadius: 6,
           },
         ],
       }}

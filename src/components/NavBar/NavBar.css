@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+  @apply text-custom-text-primary no-underline relative pb-1;
+  @apply hover:text-custom-accent;
+}
+
+.nav-link.active {
+  @apply text-custom-text-primary;
+  @apply hover:text-custom-accent;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%; /* Initial width of the underline */
+  height: 2px; /* Thickness of the underline */
+  @apply bg-custom-accent; /* Color of the underline */
+  transform: translateX(-50%); /* Center the underline horizontally */
+  transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+.nav-link.active::after {
+  width: 100%; /* Expand underline when the link is active */
+}

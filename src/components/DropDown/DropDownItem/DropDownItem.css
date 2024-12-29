@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropDownItem {
+  @apply min-w-max py-2 px-5 hover:bg-custom-accent hover:rounded-md;
+  @apply cursor-pointer;
+  @apply transition-all duration-300 ease-in-out;
+}

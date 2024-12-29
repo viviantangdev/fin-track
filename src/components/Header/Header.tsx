@@ -1,6 +1,7 @@
 import React from 'react';
-import ThemeToggler from '../utils/ThemeToggler';
-import Navbar from '../utils/Navbar';
+import './Header.css';
+import Navbar from '../NavBar/Navbar';
+import ThemeToggler from '../ThemeToggle/ThemeToggler';
 
 const Header: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const Header: React.FC = () => {
       <h1>FinTrack</h1>
       <div className='flex space-x-5'>
         <Navbar />
-        <ThemeToggler />
+        <ThemeToggler/>
       </div>
     </header>
   );

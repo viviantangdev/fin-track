@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import Dashboard from './pages/dashboard/Dashboard';
+import Header from './components/Header/Header.tsx';
+import Footer from './components/Footer/Footer.tsx';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Transactions from './pages/Transactions';
 import Settings from './pages/Settings';
 

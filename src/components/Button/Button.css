@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button {
+  @apply flex items-center justify-center gap-2;
+  @apply border-2 border-custom-border p-2 rounded-md;
+  @apply hover:bg-custom-accent hover:border-custom-accent hover:rounded-xl;
+  @apply transition-all duration-300 ease-in-out;
+}

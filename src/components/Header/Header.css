@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  @apply sticky top-0 z-[20] flex w-full justify-between items-center bg-custom-background-primary;
+  @apply p-6;
+  @apply border-b-2 border-custom-border;
+}
+
+

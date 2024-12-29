@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoAdd } from 'react-icons/io5';
-import Button from '../../../components/utils/Button';
+import Button from '../../../components/Button/Button';
 
 const AddTransactionsButtons: React.FC = () => {
   return (

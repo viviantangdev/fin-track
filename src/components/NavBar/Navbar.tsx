@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './NavBar.css';
 import { Link, useLocation } from 'react-router-dom';
 import { HiOutlineBars3, HiXMark } from 'react-icons/hi2';
 

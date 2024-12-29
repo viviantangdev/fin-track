@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply inline-flex items-center justify-start bg-custom-background-secondary;
+  @apply gap-3 py-4 px-6 rounded-md shadow-md;
+  
+}
+
+.cardIcon {
+  @apply p-3 rounded-md;
+}
+
+.cardContent {
+  @apply flex flex-col;
+}
+
+.cardContent span:first-of-type {
+  @apply font-normal;
+}
+
+.cardContent span:last-of-type {
+  @apply text-lg font-bold;
+}

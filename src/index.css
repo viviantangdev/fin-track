@@ -25,54 +25,16 @@ body {
   @apply bg-custom-background-primary text-custom-text-primary;
   @apply transition-colors duration-300;
 }
-header {
-  @apply sticky top-0 z-[20] flex w-full justify-between items-center bg-custom-background-primary;
-  @apply p-6;
-  @apply border-b-2 border-custom-border;
-}
-footer {
-  @apply bg-custom-background-secondary p-8 text-center text-sm;
-}
+
 main {
   @apply min-h-[100vh];
   @apply px-6;
 }
 
-h1 {
+header h1 {
   @apply text-xl font-bold;
 }
-h2 {
+
+section h2 {
   @apply text-lg font-bold;
-}
-
-@layer components {
-  .nav-link {
-    @apply text-custom-text-primary no-underline relative pb-1; /* Basic styling for nav links */
-  }
-
-  .nav-link.active {
-    @apply text-custom-text-primary; /* Active link color */
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0%; /* Initial width of the underline */
-    height: 2px; /* Thickness of the underline */
-    @apply bg-custom-accent; /* Color of the underline */
-    transform: translateX(-50%); /* Center the underline horizontally */
-    transition: width 0.3s ease; /* Smooth transition for the underline */
-  }
-
-  .nav-link.active::after {
-    width: 100%; /* Expand underline when the link is active */
-  }
-
-  .button {
-    @apply flex items-center justify-center gap-2 border-2 border-custom-border p-2 rounded-md;
-    @apply hover:bg-custom-accent hover:border-custom-accent hover:rounded-xl;
-    @apply transition-all duration-300 ease-in-out;
-  }
 }
